@@ -225,3 +225,8 @@ footer{
 html{
     scroll-behavior: smooth;
 }
+#Rline{
+    text-decoration: none;
+    color: white;
+    
+}
