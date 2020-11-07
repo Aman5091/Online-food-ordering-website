@@ -23,6 +23,9 @@
             <li class="item"><a href="#services-container">Services</a></li>
             <li class="item"><a href="#client-section">Our Clients</a></li>
             <li class="item"><a href="#contact">Contact Us</a></li>
+            <li class="item"><a href="menu.html">Menu</a></li>
+            <li class="item"><a href="Notes.html">Feedback</a></li>
+            
 
         </ul>
 
@@ -33,33 +36,39 @@
         <p>There is no sincerer love than the love of food.</p>
         <p>Fastest Delivery of your favourite food in no time </p>
         <button class="btn"> <a href="Bill.html" id="Rline">Order Now</a></button>
+        
     </section>
 
     <section id="services-container">
         <h1 class="h-primary center">Our Services</h1>
         <div id="services">
             <div class="box">
+                <img src="foodcatering.jpg" alt="">
+                <h2 class="h-secondary center">Food Catering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et qui, repudiandae similique nam, recusandae quidem ab asperiores ex, aut fugit labore veritatis facere?
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
+                <img src="bulkdelivery.jpg" alt="">
+                <h2 class="h-secondary center">Bulk Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium a incidunt animi ad, ab dignissimos vero? Unde numquam odit repudiandae perferendis nisi.
+
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
                 <img src="pizza.jpg" alt="">
-                <h2 class="h-secondary center">PIZZA</h2>
-                <p class="center"></p>
-            </div>
-            <div class="box">
-                <img src="snacks.jpg" alt="">
-                <h2 class="h-secondary center">SNACKS</h2>
-                <p class="center"></p>
-            </div>
-            <div class="box">
-                <img src="beverage.jpg" alt="">
-                <h2 class="h-secondary center">BEVERAGES</h2>
-                <p class="center"></p>
-            </div>
-            <div class="box">
-                <img src="indianfood.jpg" alt="">
-                <h2 class="h-secondary center">THALI</h2>
-                <p class="center"></p>
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident fugiat aliquam minima at explicabo. Earum eveniet quaerat, sunt molestias nesciunt quas! Quis.
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
             </div>
         </div>
-    </section>
+    </section> 
 
     <section id="client-section">
         <h1 class="h-primary center">Our Clients</h1>
@@ -93,22 +102,26 @@
             <form action="">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                    <input type="text" name="name" id="id1" placeholder="Enter your name">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" name="name" id="email" placeholder="Enter your Email">
+                    <input type="email" name="email" id="email" placeholder="Enter your Email">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="phone" name="name" id="phone" placeholder="Enter your Phone">
+                    <input type="phone" name="phone" id="phone" placeholder="Enter your Phone">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <button id="change" onclick="fun1()">S U B M I T</button>
                 </div>
 
             </form>
@@ -120,6 +133,26 @@
             Copyright &copy;www.DeliciousDeal.com All rights reserved
         </div>
     </footer>
+
+    <script>
+    function fun1()
+    {
+        var a=document.getElementById("id1").value;
+        if(a=="")
+        {
+            alert("name cannot be left blank");
+        }
+        if(document.getElementById("email").value=="")
+        {
+            alert("email cannot be left blank");
+        }
+        if(document.getElementById("phone").value=="")
+        {
+            alert("phone cannot be left blank");
+        }
+    }
+
+    </script>
 
 </body>
 
