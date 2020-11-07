@@ -1,0 +1,22 @@
+body{
+     color: white; 
+     background:url('../f1bg.jpg') no-repeat center center/cover; 
+    font-family: 'Bree Serif', serif;
+    
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.p-1{
+    width: 400px;
+   
+}
+.p-2{
+    width: 400px;
+}
+.com{
+    border: 3px solid white;
+    height: 35px;
+    width: 220px;
+}
