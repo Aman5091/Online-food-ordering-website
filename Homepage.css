@@ -110,7 +110,7 @@
 }
 
 #services .box{
-    border: 2px solid khaki;
+    border: 5px solid maroon;
     padding: 34px;
     margin: 3px 17px;
     border-radius: 28px;
@@ -122,8 +122,12 @@
     height: 160px;
     margin: auto;
     display: block;
-    
-}
+    border-radius: 50%;
+    }
+    #services .box img:hover{
+        transform: scaleX(0.8);
+    }    
+
 
 /* #services{
     
@@ -228,5 +232,35 @@ html{
 #Rline{
     text-decoration: none;
     color: white;
+    font-weight: bold;
     
+}
+.client-item img:hover{
+    transform: scale(0.5);
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+.box img:hover{
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+}
+#contact{
+    margin-top: 50px;
+}
+#change{
+    width: 628px;
+    height: 45px;
+    margin-top: 5px;
+    background: tomato;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    font-family:'Bree Serif', serif;
+    border: 1px solid white;
+}
+#change:hover{
+    background: black;
 }
