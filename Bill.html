@@ -5,49 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="billstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&family=Bree+Serif&display=swap"rel="stylesheet">
+     
 </head>
 <body>
     <h2>Delicious Deals for Meals</h2>
     <div class="container-first">
         <div class="container">
-            <div class="p-1">
-                <fieldset>
+            <div class="p-1" >
+                <fieldset style="border: 5px solid white;">
                     <legend>Personal Information</legend>
-                    Full Name: <input type="text" id="name"><br/>
-                    Email: <input type="text" id="email">
+                    Full Name: <input type="text" id="name" class="com" ><br/><br>
+                    Email: <input type="text" id="email" style="margin-left:30px" class="com">
                 </fieldset>
 
             </div>
 
-            <div class="p-2">
-                <fieldset>
+            <div class="p-2" style="margin-left: 100px;">
+                <fieldset style="border: 5px solid white;">
                     <legend>Your Orders</legend>
-                    Pizza(Rs 200): <input type="text"><br>
-                    Cold Drink(Rs 30): <input type="text"><br>
-                    Indian Thali(Rs 70): <input type="text"><br/>
-                    Pasta(Rs 60): <input type="text"><br/>
-                    Veg-Noodles(Rs 50): <input type="text"><br/>
-                    Ice-Cream(Rs 30): <input type="text"><br/>
-                    Samosa(Rs 10): <input type="text"><br/>
-                    Kachori(Rs 20): <input type="text"><br/>
-                    Dhosa(Rs 50): <input type="text"><br/>
+                    Pasta: <input type="text" id="Pasta" style="margin-left: 80px;" class="com"><br><br>
+                    Pizza: <input type="text" id="Pizza" style="margin-left: 80px;" class="com"><br><br>
+                    Fresh Salad: <input type="text" id="Salad" style="margin-left: 37px;" class="com"><br/><br>
+                    Fluffy Burgers: <input type="text" id="Burgers" style="margin-left: 20px;" class="com"><br/><br>
+                    Cold Icecream: <input type="text" id="Ice-cream" style="margin-left: 20px;" class="com"><br/><br>
+                    Snacks Items: <input type="text" id="Snacks" style="margin-left: 25px;" class="com"><br/>
+                   
                 </fieldset>
             </div>
         </div>
 
         <div class="container">
-            <fieldset>
+            <fieldset style="border: 5px solid white;">
                 <legend>Your Bill</legend>
-                <h3>Your Name</h3>
-                <h3>Email</h3>
+                <h3>Your Name: <span id="name2"></span></h3>
+                <h3>Email: <span id="email2"></span></h3>
                 <table border="1">
-                <tr><th>Menu</th><th>Price</th><th>Quantity</th><th>Amount</th></tr>
-                <tr><td>Samosa</td><td>Rs 10</td><td>1</td><td>Rs 10</td></tr>
+                <thead class="com">
+                    <tr><th>Menu</th><th>Price</th><th>Quantity</th><th>Amount</th></tr>
+                </thead>
+
+                <tbody id="Billstatement" class="com">
+
+                </tbody>
+                
             </table>
             </fieldset>
-            <h1>Total Amount: Rs 10</h1>
+            <h1>Total Amount to be Paid :  Rs <span id="Amount"></span></h1>
         </div>
     </div>
+
+    <script>
+        var name="";
+        var email="";
+        var pasta_price=80,pizza_price=180, salad_price=50,burger_price=70,icecream=50,snacks=50;
+        var pasta_q=0,pizza_q=0,salad_q=0,burger_q=0,icecream_q=0,snacks_q=0;
+        var s1="",s2="",s3="",s4="",s5="",s6="";
+
+        document.getElementById("name").addEventListener("keyup",function(){
+        name=document.getElementById("name").value;
+        document.getElementById("name2").innerHTML=name;
+        });
+
+        document.getElementById("email").addEventListener("keyup",function(){
+        email=document.getElementById("email").value;
+        document.getElementById("email2").innerHTML=email;
+        });
+
+        document.getElementById("Pasta").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s1="";
+                pasta_q=0;
+                showbill();
+                
+            }
+            else
+            {
+            pasta_q=this.value;
+            s1="<tr><td>Pasta</td><td>"+pasta_price+"</td><td>"+pasta_q+"</td><td>"+pasta_q+"*"+pasta_price+"="+pasta_price*pasta_q+"</td></tr>";
+            showbill();
+
+        }
+        });
+
+        document.getElementById("Pizza").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s2="";
+                pizza_q=0;
+                showbill();
+            }
+            else
+            {
+            pizza_q=this.value;
+            s2="<tr><td>Pizza</td><td>"+pizza_price+"</td><td>"+pizza_q+"</td><td>"+pizza_q+"*"+pizza_price+"="+pizza_price*pizza_q+"</td></tr>";
+            showbill();
+        }
+        });
+
+        document.getElementById("Salad").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s3="";
+                salad_q=0;
+                showbill();
+            }
+            else
+            {
+            salad_q=this.value;
+            s3="<tr><td>Salad</td><td>"+salad_price+"</td><td>"+salad_q+"</td><td>"+salad_q+"*"+salad_price+"="+salad_price*salad_q+"</td></tr>";
+            showbill();
+        }
+        });
+
+        document.getElementById("Burgers").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s4="";
+                burger_q=0;
+                showbill();
+            }
+            else
+            {
+            burger_q=this.value;
+            s4="<tr><td>Burgers</td><td>"+burger_price+"</td><td>"+burger_q+"</td><td>"+burger_q+"*"+burger_price+"="+burger_price*burger_q+"</td></tr>";
+            showbill();
+        }
+        });
+
+        document.getElementById("Ice-cream").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s5="";
+                icecream_q=0;
+                showbill();
+            }
+            else
+            {
+            icecream_q=this.value;
+            s5="<tr><td>Icecream</td><td>"+icecream+"</td><td>"+icecream_q+"</td><td>"+icecream_q+"*"+icecream+"="+icecream*icecream_q+"</td></tr>";
+            showbill();
+        }
+        });
+
+        document.getElementById("Snacks").addEventListener("keyup",function(){
+            if(this.value=="" || this.value==0)
+            {
+                s6="";
+                snacks_q=0;
+                showbill();
+
+            }
+            else
+            {
+            snacks_q=this.value;
+            s6="<tr><td>Snacks</td><td>"+snacks+"</td><td>"+snacks_q+"</td><td>"+snacks_q+"*"+snacks+"="+snacks*snacks_q+"</td></tr>";
+            showbill();
+        }
+        });
+
+        function showbill()
+        {
+            document.getElementById("Billstatement").innerHTML=s1+s2+s3+s4+s5+s6;
+            document.getElementById("Amount").innerHTML=(pasta_q*pasta_price)+(pizza_price*pizza_q)+(salad_price*salad_q)+(burger_price*burger_q)+(icecream_q*icecream)+(snacks_q*snacks);
+        }
+
+        
+       
+
+    </script>
     
 </body>
 </html>
